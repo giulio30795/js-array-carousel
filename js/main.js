@@ -42,7 +42,7 @@ const textCollection = [
 
 const images = document.querySelector('.images');
 const thumbs = document.querySelector('.thumbs');
-let imageNumber = 3;
+let imageNumber = 0;
 
 for (let i = 0; i < imageCollection.length; i++){
     // Images
@@ -63,8 +63,8 @@ document.getElementsByClassName('thumb')[imageNumber].classList.add('active');
 
 
 // Add Click
-let next = document.querySelector('.next');
-let prev = document.querySelector('.prev');
+const next = document.querySelector('.next');
+const prev = document.querySelector('.prev');
 
 next.addEventListener('click', function() {
     if (imageNumber === imageCollection.length - 1){
