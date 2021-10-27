@@ -73,6 +73,7 @@ next.addEventListener('click', function() {
         imageNumber++;
     }
 
+    // Class change
 document.querySelector('.image-container.active').classList.remove('active');
 document.getElementsByClassName('image-container')[imageNumber].classList.add('active');
 
@@ -80,7 +81,7 @@ document.querySelector('.thumb.active').classList.remove('active');
 document.getElementsByClassName('thumb')[imageNumber].classList.add('active');
 }
 )
-
+// number check
 prev.addEventListener('click', function() {
     if (imageNumber === 0){
         imageNumber = (imageCollection.length - 1);
