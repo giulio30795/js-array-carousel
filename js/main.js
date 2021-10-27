@@ -42,6 +42,7 @@ const textCollection = [
 
 const images = document.querySelector('.images')
 const thumbs = document.querySelector('.thumbs')
+let imageNumber = 0
 
 for (let i = 0; i < imageCollection.length; i++){
     // Images
@@ -59,3 +60,6 @@ for (let i = 0; i < imageCollection.length; i++){
         <p>${textCollection}</p>
     </div>`
 }
+
+document.getElementsByClassName('image-container')[imageNumber].classList.add('active')
+document.getElementsByClassName('thumb')[imageNumber].classList.add('active')
