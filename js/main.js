@@ -47,19 +47,35 @@ let imageNumber = 0
 for (let i = 0; i < imageCollection.length; i++){
     // Images
     images.innerHTML += `<div class="image-container">
-    <img src="${imageCollection}" alt="${titleCollection}">
+    <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
     <div class="text">
-        <h3>${titleCollection}</h3>
-        <p>${textCollection}</p>
+        <h3>${titleCollection[i]}</h3>
+        <p>${textCollection[i]}</p>
     </div>`
     // Thumbs
-    thumbs.innerHTML += `<div class="image-container">
-    <img src="${imageCollection}" alt="${titleCollection}">
-    <div class="text">
-        <h3>${titleCollection}</h3>
-        <p>${textCollection}</p>
+    thumbs.innerHTML += `<div class="thumb">
+    <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
     </div>`
 }
 
 document.getElementsByClassName('image-container')[imageNumber].classList.add('active')
 document.getElementsByClassName('thumb')[imageNumber].classList.add('active')
+
+// Add Click
+const next = document.querySelector('.next')
+const prev = document.querySelector('.prev')
+
+next.addEventListener('click', function() {
+    if (imageNumber === imageCollection.length-1){
+        imageNumber = 0;
+    } else { 
+        imageNumber++;
+    }
+
+document.querySelector('image-container.active').classList.remove('active')
+document.getElementsByClassName('.image-container')[imageNumber].classList.add('active')
+
+document.querySelector('thumb.active').classList.remove('active')
+document.getElementsByClassName('.thumb')[imageNumber].classList.add('active')
+}
+)
