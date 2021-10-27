@@ -40,9 +40,9 @@ const textCollection = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
-const images = document.querySelector('.images')
-const thumbs = document.querySelector('.thumbs')
-let imageNumber = 3
+const images = document.querySelector('.images');
+const thumbs = document.querySelector('.thumbs');
+let imageNumber = 3;
 
 for (let i = 0; i < imageCollection.length; i++){
     // Images
@@ -51,26 +51,41 @@ for (let i = 0; i < imageCollection.length; i++){
     <div class="text">
         <h3>${titleCollection[i]}</h3>
         <p>${textCollection[i]}</p>
-    </div>`
+    </div>`;
     // Thumbs
     thumbs.innerHTML += `<div class="thumb">
     <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
-    </div>`
+    </div>`;
 }
 
-document.getElementsByClassName('image-container')[imageNumber].classList.add('active')
-document.getElementsByClassName('thumb')[imageNumber].classList.add('active')
+document.getElementsByClassName('image-container')[imageNumber].classList.add('active');
+document.getElementsByClassName('thumb')[imageNumber].classList.add('active');
 
 
 // Add Click
-let next = document.querySelector('.next')
-let prev = document.querySelector('.prev')
+let next = document.querySelector('.next');
+let prev = document.querySelector('.prev');
 
 next.addEventListener('click', function() {
     if (imageNumber === imageCollection.length - 1){
         imageNumber = 0;
     } else { 
         imageNumber++;
+    }
+
+document.querySelector('.image-container.active').classList.remove('active');
+document.getElementsByClassName('image-container')[imageNumber].classList.add('active');
+
+document.querySelector('.thumb.active').classList.remove('active');
+document.getElementsByClassName('thumb')[imageNumber].classList.add('active');
+}
+)
+
+prev.addEventListener('click', function() {
+    if (imageNumber === 0){
+        imageNumber = (imageCollection.length - 1);
+    } else { 
+        imageNumber--;
     }
 
 document.querySelector('.image-container.active').classList.remove('active');
