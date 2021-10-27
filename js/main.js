@@ -42,7 +42,7 @@ const textCollection = [
 
 const images = document.querySelector('.images')
 const thumbs = document.querySelector('.thumbs')
-let imageNumber = 0
+let imageNumber = 3
 
 for (let i = 0; i < imageCollection.length; i++){
     // Images
@@ -61,21 +61,22 @@ for (let i = 0; i < imageCollection.length; i++){
 document.getElementsByClassName('image-container')[imageNumber].classList.add('active')
 document.getElementsByClassName('thumb')[imageNumber].classList.add('active')
 
+
 // Add Click
-const next = document.querySelector('.next')
-const prev = document.querySelector('.prev')
+let next = document.querySelector('.next')
+let prev = document.querySelector('.prev')
 
 next.addEventListener('click', function() {
-    if (imageNumber === imageCollection.length-1){
+    if (imageNumber === imageCollection.length - 1){
         imageNumber = 0;
     } else { 
         imageNumber++;
     }
 
-document.querySelector('image-container.active').classList.remove('active')
-document.getElementsByClassName('.image-container')[imageNumber].classList.add('active')
+document.querySelector('.image-container.active').classList.remove('active');
+document.getElementsByClassName('image-container')[imageNumber].classList.add('active');
 
-document.querySelector('thumb.active').classList.remove('active')
-document.getElementsByClassName('.thumb')[imageNumber].classList.add('active')
+document.querySelector('.thumb.active').classList.remove('active');
+document.getElementsByClassName('thumb')[imageNumber].classList.add('active');
 }
 )
